@@ -2,8 +2,10 @@
   "name": "sushi-swap-subgraph",
   "license": "UNLICENSED",
   "scripts": {
-    "codegen": "graph codegen",
-    "build": "graph build",
+    "install": "yarn install",
+    "start": "docker-compose up -d",
+    "auth": "graph auth --studio 2aa81a534b58a43d19838256f1c83db1",
+    "build": "graph codegen && graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ Crypt0J0ker/sushi-swap-subgraph",
     "create-local": "graph create --node http://localhost:8020/ Crypt0J0ker/sushi-swap-subgraph",
     "remove-local": "graph remove --node http://localhost:8020/ Crypt0J0ker/sushi-swap-subgraph",
@@ -14,5 +16,7 @@
     "@graphprotocol/graph-cli": "0.73.0",
     "@graphprotocol/graph-ts": "0.32.0"
   },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
 }
